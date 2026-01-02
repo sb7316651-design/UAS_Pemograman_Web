@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>EventConnect | Website Event</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website event informatif dan interaktif untuk publik">
+
+    <!-- CSS -->
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #2563eb;
+            --accent: #facc15;
+            --light: #f3f4f6;
+            --dark: #111827;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        /* HEADER */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 22px;
+        }
+
+        header nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        header nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            color: white;
+            padding: 90px 20px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .hero button {
+            margin-top: 20px;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 5px;
+            background: var(--accent);
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            opacity: 0.9;
+        }
+
+        /* SECTION */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .section.gray {
+            background: var(--light);
+        }
+
+        .section h2 {
+            margin-bottom: 15px;
+            font-size: 26px;
+        }
+
+        .section ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .section ul li {
+            margin: 8px 0;
+        }
+
+        /* FORM */
+        form {
+            max-width: 420px;
+            margin: 30px auto 0;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        form input,
+        form select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+        }
+
+        form button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #notif {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 18px;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header nav {
+                margin-top: 10px;
+            }
+
+            header nav a {
+                margin: 0 10px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🎉 EventConnect</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">Tentang</a>
+        <a href="#event">Event</a>
+        <a href="#register">Daftar</a>
+        <a href="#contact">Kontak</a>
+    </nav>
+</header>
+
+<main>
+
+<section id="home" class="hero">
+    <h2>Website Resmi Event Digital</h2>
+    <p>Informasi, pendaftaran, dan interaksi event dalam satu platform</p>
+    <button onclick="scrollToRegister()">Daftar Sekarang</button>
+</section>
+
+<section id="about" class="section">
+    <h2>Tentang Event</h2>
+    <p>
+        EventConnect adalah website event informatif dan interaktif
+        yang membantu organisasi atau individu menyampaikan informasi
+        event secara online dan mudah diakses publik.
+    </p>
+</section>
+
+<section id="event" class="section gray">
+    <h2>Detail Event</h2>
+    <ul>
+        <li>📅 Tanggal: 20 Februari 2026</li>
+        <li>📍 Lokasi: Online (Zoom)</li>
+        <li>🎤 Tema: Digital Innovation & Technology</li>
+        <li>👥 Peserta: Umum</li>
+    </ul>
+</section>
+
+<section id="register" class="section">
+    <h2>Form Pendaftaran</h2>
+
+    <form id="formRegister">
+        <input type="text" id="nama" placeholder="Nama Lengkap" required>
+        <input type="email" id="email" placeholder="Email Aktif" required>
+        <select id="kategori" required>
+            <option value="">Pilih Kategori</option>
+            <option>Mahasiswa</option>
+            <option>Pelajar</option>
+            <option>Umum</option>
+        </select>
+        <button type="submit">Kirim Pendaftaran</button>
+    </form>
+
+    <p id="notif"></p>
+</section>
+
+<section id="contact" class="section gray">
+    <h2>Kontak Kami</h2>
+    <p>Email: eventconnect@email.com</p>
+    <p>Instagram: @eventconnect</p>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 EventConnect | Website Event Publik</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    window.scrollToRegister = function () {
+        document.getElementById("register")
+            .scrollIntoView({ behavior: "smooth" });
+    };
+
+    const form = document.getElementById("formRegister");
+    const notif = document.getElementById("notif");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const nama = document.getElementById("nama").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const kategori = document.getElementById("kategori").value;
+
+        const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+        if (!nama || !email || !kategori) {
+            tampilNotif("❌ Harap lengkapi semua data.", "red");
+            return;
+        }
+
+        if (!emailValid) {
+            tampilNotif("❌ Email tidak valid.", "red");
+            return;
+        }
+
+        tampilNotif("✅ Pendaftaran berhasil! Terima kasih, " + nama, "green");
+        form.reset();
+    });
+
+    function tampilNotif(pesan, warna) {
+        notif.textContent = pesan;
+        notif.style.color = warna;
+
+        setTimeout(() => {
+            notif.textContent = "";
+        }, 5000);
+    }
+});
+</script>
+
+</body>
+</html>
+
+
